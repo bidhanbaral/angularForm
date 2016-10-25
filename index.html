@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Material Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">   
+    
+    <link rel='stylesheet prefetch' href='css/angular-material.min.css'>
+  
+     <link rel="stylesheet" href="css/style.css">
+
+    
+  </head>
+
+  <body  >
+
+    <div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" ng-controller="formCtrl" ng-app="formApp">
+
+  
+
+    <div layout="column" layout-align="center center"  class="formButton">
+    <md-button class="md-raised md-cornered md-warn" ng-click="formShow=true;buttonShow=true" ng-hide="buttonShow" >Create  Form</md-button>
+    </div>
+ 
+<div layout="row"  ng-show="formShow" layout-padding="">
+<md-button class="md-icon-button md-primary" aria-label="Settings" hide-gt-xs ng-click="showLeftSidebar($event)">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        
+      </md-button>
+<div flex="30" hide-xs>
+<h2 class="md-display-1">Select additional fields</h2>
+<div>
+ <md-checkbox ng-model="data.cb1" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="modelInputField(data.cb1);" >
+  Model
+ </md-checkbox>
+</div>
+<div>
+ <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="makelInputField(data.cb2);">
+    Make
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb3" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="yearInputField(data.cb3);">
+    Year
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb4" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="companyInputField(data.cb4);">
+    Company
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb5" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="fileInputField(data.cb5);">
+    File upload
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb6" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="locationInputField(data.cb6);">
+    Location
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb7" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="colorInputField(data.cb7);">
+    Color
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb8" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="startInputField(data.cb8);">
+    Start
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb9" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="endInputField(data.cb9);">
+    End
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb10" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="checkboxInputField(data.cb10);">
+    Checkbox
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb11" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="radioInputField(data.cb11);">
+    Radio
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb12" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="laptopInputField(data.cb12);">
+    Laptop
+ </md-checkbox>
+</div>
+</div>
+    <div   flex="70">
+      <form name="userForm">
+      <md-input-container class="md-block">&nbsp;</md-input-container>
+        <md-input-container class="md-block">
+          <label class="md-title">Title</label>
+          <input ng-model="user.title">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label class="md-title">Price</label>
+          <input ng-model="user.price">
+        </md-input-container>
+      
+        <div layout-gt-xs="row">
+       
+          <md-input-container>
+            <label>Expiry</label>
+            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+          </md-input-container>
+        </div>
+
+       
+          <md-input-container class="md-block">
+          <label class="md-title">Tags</label>
+          <input ng-model="user.tags">
+        </md-input-container>
+          <md-input-container class="md-block" ng-hide="modelInput">
+          <label class="md-title">Model</label>
+          <input ng-model="user.model">
+        </md-input-container>
+          <md-input-container class="md-block" ng-hide="makelInput">
+          <label class="md-title">Make</label>
+          <input ng-model="user.make">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="yearInput">
+          <label class="md-title">Year</label>
+          <input ng-model="user.year">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="compamyInput">
+          <label class="md-title">Company</label>
+          <input ng-model="user.company">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="fileInput">
+        
+          <input type="file" ng-model="user.file">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="locationInput">
+          <label class="md-title">Location</label>
+          <input ng-model="user.location">
+        </md-input-container>
+        
+        <md-input-container class="md-block" ng-hide="colorInput">
+          <label class="md-title">Color</label>
+          <input ng-model="user.color">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="startInput">
+          <label class="md-title">Start</label>
+          <input ng-model="user.start">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="endInput">
+          <label class="md-title">End</label>
+          <input ng-model="user.end">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="checkboxInput">
+          <label class="md-title">Checkbox</label>
+          <input ng-model="user.checkbox">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="radioInput">
+          <label class="md-title">Radio</label>
+          <input ng-model="user.radio">
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="laptopInput">
+          <label class="md-title">Laptop</label>
+          <input ng-model="user.laptop">
+        </md-input-container>
+          <div layout-gt-xs="row">
+       
+          
+            <md-button class="md-raised md-cornered md-warn">Submit</md-button>
+         
+        </div>
+      
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
+<div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog >
+  
+
+<div>
+ <md-checkbox ng-model="data.cb20" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'">
+  Model
+ </md-checkbox>
+</div>
+
+
+      </md-dialog>
+    </div>
+  </div>
+
+ <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+<script src='js/svg-assets-cache.js'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <script src="js/Route.js"></script>
+        <script src="js/Controller.js"></script>        
+        <script src="js/Configuration.js"></script>
+
+    
+    
+  </body>
+</html>

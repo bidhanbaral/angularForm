@@ -1,0 +1,35 @@
+.formButton{
+	position:absolute !important;
+	top:50%;
+	left:50%;
+	}
+.md-block label{
+	float:left;
+	}
+.tooltipsButton{
+   height: 30px !important;
+    margin-left: 100%;
+    margin-top: -19px;
+    width: 32px !important;
+	line-height:30px !important;
+	}
+.tooltipsButtonFull{
+	float:right;
+	margin-top:-40px;
+	}
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button, .tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+.tooltipdemoBasicUsage .left {
+  top: 70px !important;
+  left: 56px !important; }
+.tooltipdemoBasicUsage .right {
+  top: 70px !important;
+  right: 56px !important; }
+md-tooltip .md-content {
+    height: auto;
+	font-size:12px !important;
+	padding:5px !important;
+}

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Material Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">   
+    
+    <link rel='stylesheet prefetch' href='css/angular-material.min.css'>
+  
+     <link rel="stylesheet" href="css/style.css">
+
+    
+  </head>
+
+  <body  >
+
+    <div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" ng-controller="formCtrl" ng-app="formApp">
+
+  
+<!-------Start first loading button-->
+    <div layout="column" layout-align="center center"  class="formButton">
+    <md-button class="md-raised md-cornered md-warn" ng-click="formShow=true;buttonShow=true" ng-hide="buttonShow" >Create  Form</md-button>
+    </div>
+   
+<!-------End  first loading button-->
+
+<div layout="row"  ng-show="formShow" layout-padding="">
+  
+<!-------Start small screen sidebar----------->
+<md-button class="md-icon-button md-primary" aria-label="Settings" hide-gt-xs ng-click="showLeftSidebar($event)">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        
+      </md-button>
+<div flex="30" hide-xs>
+
+<h2 class="md-display-1">Select additional fields</h2>
+<div>
+ <md-checkbox ng-model="data.cb1" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="modelInputField(data.cb1);" >
+  Model
+ </md-checkbox>
+</div>
+<div>
+ <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="makelInputField(data.cb2);">
+    Make
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb3" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="yearInputField(data.cb3);">
+    Year
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb4" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="companyInputField(data.cb4);">
+    Company
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb5" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="fileInputField(data.cb5);">
+    File upload
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb6" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="locationInputField(data.cb6);">
+    Location
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb7" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="colorInputField(data.cb7);">
+    Color
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb8" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="startInputField(data.cb8);">
+    Start
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb9" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="endInputField(data.cb9);">
+    End
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb10" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="checkboxInputField(data.cb10);">
+    Checkbox
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb11" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="radioInputField(data.cb11);">
+    Radio
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb12" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="laptopInputField(data.cb12);">
+    Laptop
+ </md-checkbox>
+
+    </div>
+     
+<!-------End small screen  sidebar-->
+
+  
+<!-------Start sidebar for large screen------->
+      <div style="visibility: hidden">
+<div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+<h2 class="md-display-1">Select additional fields</h2>
+<div>
+ <md-checkbox ng-model="data.cb1" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" ng-change="modelInputField(data.cb1);" >
+  Model
+ </md-checkbox>
+</div>
+<div>
+ <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="makelInputField(data.cb2);">
+    Make
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb3" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="yearInputField(data.cb3);">
+    Year
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb4" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="companyInputField(data.cb4);">
+    Company
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb5" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="fileInputField(data.cb5);">
+    File upload
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb6" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="locationInputField(data.cb6);">
+    Location
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb7" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="colorInputField(data.cb7);">
+    Color
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb8" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="startInputField(data.cb8);">
+    Start
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb9" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="endInputField(data.cb9);">
+    End
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb10" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="checkboxInputField(data.cb10);">
+    Checkbox
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb11" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="radioInputField(data.cb11);">
+    Radio
+ </md-checkbox>
+ </div>
+ <div>
+ <md-checkbox ng-model="data.cb12" aria-label="Checkbox 2" ng-true-value="'yup'" class="dotted" ng-false-value="'nope'" ng-change="laptopInputField(data.cb12);">
+    Laptop
+ </md-checkbox>
+</div>
+ </md-dialog>
+    </div>
+    </div>
+ <!-------End sidebar for large screen ------->   
+</div>
+
+<!-------Start new field ------->
+    <div   flex="70">
+      <form name="userForm">
+      <md-input-container class="md-block">&nbsp;</md-input-container>
+        <md-input-container class="md-block">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Title</label>
+          <md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.title" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.title" ng-mouseover="title=true;m.title=true" ng-mouseleave="title=false;m.title=flase">
+         </div>
+          <div style="float:right;" layout="column" flex-lg="20" hide-gt-xs show-lg >
+          
+          <md-tooltip md-visible="title" md-direction="right" class="customToolTips tooltipsThird" hide-gt-xs show-lg >
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+    
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Price</label>
+          <md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.price" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.price" ng-mouseover="price=true;m.price=true" ng-mouseleave="price=false;m.price=fale">
+          </div>
+          
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="price" md-direction="left" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+     
+          </div>
+        </md-input-container>
+      <md-input-container class="md-block">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Expiry</label>
+          <md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.exp" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <md-datepicker class="expDatepicker" ng-model="user.submissionDate" ng-mouseover="submissionDate=true;m.exp=true" ng-mouseleave="submissionDate=false;m.exp=false"></md-datepicker>
+          </div>
+          
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="submissionDate" md-direction="left" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+     
+          </div>
+        </md-input-container>
+          <md-input-container class="md-block">
+          <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Tags</label>
+          <md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.tags" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.tags" ng-mouseover="tags=true;m.tags=true" ng-mouseleave="tags=false;m.tags=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+         
+          <md-tooltip md-visible="tags" md-direction="left" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+   
+          </div>
+        </md-input-container>
+          <md-input-container class="md-block" ng-hide="modelInput">
+          <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Model</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.model" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.model" ng-mouseover="model=true;m.model=true" ng-mouseleave="model=false;m.model=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20" hide-gt-xs show-lg>
+          
+          <md-tooltip md-visible="model" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+     
+          </div>
+        </md-input-container>
+          <md-input-container class="md-block" ng-hide="makelInput">
+          <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Make</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.make" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.make" ng-mouseover="make=true;m.make=true" ng-mouseleave="make=false;m.make=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="make" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="yearInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Year</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.year" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.year" ng-mouseover="year=true;m.year=true" ng-mouseleave="year=false;m.year=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="year" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="compamyInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Company</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.company" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.company" ng-mouseover="company=true;m.company=true" ng-mouseleave="company=false;m.company=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="company" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="fileInput">
+        
+          <input type="file" ng-model="user.file" ng-mouseover="file=true;m.file=true" ng-mouseleave="file=false;m.file=flse">
+          <md-tooltip md-visible="file" md-direction="right" class="customToolTips" hide-xs>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="locationInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Location</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.location" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.location" ng-mouseover="location=true;m.location=true" ng-mouseleave="location=false;m.location=false">
+          </div>
+          
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="location" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          
+          </div>
+        </md-input-container>
+        
+        <md-input-container class="md-block" ng-hide="colorInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Color</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.color" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.color" ng-mouseover="color=true;m.color=true" ng-mouseleave="color=false;m.color=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="color" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="startInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+        
+          <label class="md-title">Start</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.start" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.start" ng-mouseover="start=true;m.start=true" ng-mouseleave="start=false;m.start=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="start" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="endInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">End</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.end" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+        
+          <input ng-model="user.end" ng-mouseover="end=true;m.end=true" ng-mouseleave="end=false;m.end=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="end" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="checkboxInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Checkbox</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.checkbox" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.checkbox" ng-mouseover="checkbox=true;m.checkbox=true" ng-mouseleave="checkbox=false;m.checkbox=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="checkbox" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="radioInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Radio</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.radio" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.radio" ng-mouseover="radio=true;m.radio=true" ng-mouseleave="radio=false;m.radio=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          <md-tooltip md-visible="radio" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" ng-hide="laptopInput">
+        <div layout="column" flex-lg="80" layout-gt-md="100">
+          <label class="md-title">Laptop</label><md-button class="md-fab md-mini tooltipsButton" aria-label="Insert Drive" hide-lg><strong>?</strong>
+          <md-tooltip md-visible="m.laptop" md-direction="left" class="customToolTips" hide-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+        </md-button>
+          <input ng-model="user.laptop" ng-mouseover="laptop=true;m.laptop=true" ng-mouseleave="laptop=false;m.laptop=false">
+          </div>
+          <div style="float:right;" layout="column" flex-lg="20"  hide-gt-xs show-lg>
+          
+          <md-tooltip md-visible="laptop" md-direction="right" class="customToolTips tooltipsThird"  hide-gt-xs show-lg>
+            Sjældent har jeg oplevet<br>
+            professionel og kompetent <br>
+            Vi gav dem topkarakterer <br>
+            vejen rundt i vores inter
+          
+          </md-tooltip>
+       
+          </div>
+        </md-input-container>
+          <div layout-gt-xs="row">
+       
+          
+            <md-button class="md-raised md-cornered md-warn" ng-click="submitForm();">Submit</md-button>
+         
+        </div>
+      
+
+
+
+      </form>
+    </div>
+    <!-------End new field ------->
+  </div>
+</div>
+
+
+ <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+<script src='js/svg-assets-cache.js'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <script src="js/Route.js"></script>
+        <script src="js/Controller.js"></script>        
+        <script src="js/Configuration.js"></script>
+
+    
+    
+  </body>
+</html>
